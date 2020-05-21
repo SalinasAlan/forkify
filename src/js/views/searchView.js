@@ -10,6 +10,14 @@ export const clearResults = () => {
 };
 
 
+export const highLigthSelected = id => {
+    const resultArr = Array.from(document.querySelectorAll('.results__link'));
+    resultArr.forEach(el => {
+        el.classList.remove('results__link--active');
+    })
+    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+};
+
 // 'Pasta with tomato and spinach'
 const limitRecipieTitle = (title, limit = 20) => {
     const newTitle = [];
